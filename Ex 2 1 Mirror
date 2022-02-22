@@ -1,0 +1,27 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+	int prom, n, answer = 0;
+	
+	freopen("input.txt", "r", stdin);
+    freopen("output.txt", "w", stdout);
+
+	scanf("%d", &n);
+	
+	int i = 1;
+
+	while (n / (int) pow(10, i-1) != 0)
+	{
+		answer = answer * 10 + ((n % (int) pow(10,i)) - (n % (int)pow(10, i - 1))) / pow(10, i-1);
+		++i;
+	}
+
+printf("%d", answer);
+
+	fclose(stdin);
+	fclose(stdout);
+
+	return 0;
+}
